@@ -1,0 +1,69 @@
+﻿@model ContactManagement.User
+
+@{
+    ViewBag.Title = "Delete";
+}
+        <h1 style="color: white;">Delete</h1>
+
+
+        <div class="card" style="border-radius: 8px; background-color: white; border: 1px solid #bdc3c7;">
+            <div class="card-body" style="padding: 16px;">
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <h4>User</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Username)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Username)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Password)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Password)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Surname)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Surname)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                        </div>
+                    }
+                </div>
+                </div>
+            </div>
+                

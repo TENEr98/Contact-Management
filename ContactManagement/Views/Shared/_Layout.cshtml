@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>@ViewBag.Title</title>
+		@Styles.Render("~/Content/css")
+		@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div style="margin-top: -60px;margin-bottom: -40px; height: 100vh; width: 100%; background-image: url('https://wallpapersite.com/images/pages/pic_w/15438.png'); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

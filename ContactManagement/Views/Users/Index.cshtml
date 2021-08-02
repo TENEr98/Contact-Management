@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ContactManagement.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+            <div class="card" style="margin-top: 16px;">
+                <div class="card-body">
+                <h1 style="color: white">Contacts list</h1>
+                    <ul class="list-group list-group-flush">
+                        @if (Model.Any())
+                        {
+                        foreach (var item in Model)
+                        {
+
+                            <li class="list-group-item" style="width: 100%; display: flex; flex-direction: row;">
+                                <div>
+                                    <h5 class="mb-2">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                        @Html.DisplayFor(modelItem => item.Surname)
+
+                                    </h5>
+                                    <small class="text-muted">
+                                        @Html.DisplayFor(modelItem => item.Email)
+
+                                    </small>
+                                </div>
+                                <div style="display: flex; flex-grow: 1; "></div>
+                                <div style="display: flex; align-items:center;">
+                                    <button type="button" style="color: white; margin-right: 8px;" class="btn btn-secondary">
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                                    </button>
+                                    <button type="button" style="color: white;" class="btn btn-danger">
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+
+                                    </button>
+                                    
+                                </div>
+                            </li>
+
+                        }}
+                        else
+                        {
+                            <li class="list-group-item">
+                                <span>List is empty</span>
+                            </li>
+                        }
+<li class="list-group-item">
+                            <button type="button" class="btn btn-secondary">
+                                @Html.ActionLink("Create New", "Create")
+                            </button>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+            </div>
